@@ -12,20 +12,20 @@ export const HeroSection = () => {
         <img
           src="/assets/alim-the-thinker.png"
           alt="Saif Ul Alim Ahmed"
-          className="w-[80vw] max-w-[300px] md:w-[40vw] md:max-w-[400px] pb-[20px] md:pb-0 m-0"
+          className="w-[80vw] max-w-xs md:w-[40vw] md:max-w-sm pb-5 md:pb-0 m-0"
         />
       </div>
 
-      <div className="pb-[20px] md:pb-0">
-        <h1 className="font-semibold text-left tracking-[10px] text-[2rem] md:text-[3rem] lg:text-[4rem] leading-none m-0">
+      <div className="pb-5 md:pb-0">
+        <h1 className="font-semibold text-left tracking-widest text-4xl md:text-6xl leading-none m-0">
           SAIF UL ALIM <br /> AHMED
         </h1>
 
-        <h2 className="bg-gradient-to-r text-left from-gray-500 to-gray-700 bg-clip-text text-transparent font-(family-name:--font-space-mono) tracking-wider text-[1.2rem] md:text-[1.8rem] lg:text-[2.2rem] leading-tight m-0">
+        <h2 className="bg-gradient-to-r text-left from-gray-500 to-gray-700 bg-clip-text text-transparent font-(family-name:--font-space-mono) tracking-wider text-2xl md:text-4xl leading-tight m-0">
           Software Engineer
         </h2>
 
-        <div className="flex flex-row justify-start gap-[40px] pt-0 md:pt-10">
+        <div className="flex flex-row justify-start gap-8 pt-0 md:pt-10">
           <a href="https://www.linkedin.com/in/saif-alim" aria-label="LinkedIn">
             <div className="transition-transform duration-200 ease-in-out hover:scale-110 group pt-1">
               <LinkedInIcon />
@@ -48,7 +48,7 @@ export const HeroSection = () => {
             </div>
             <div className="relative overflow-hidden">
               <p
-                className={`font-(family-name:--font-space-mono) pl-1 pt-0 text-left tracking-wide text-[0.8rem] md:text-[1rem] leading-tight m-0 bg-gradient-to-r from-gray-500 to-gray-700 bg-clip-text text-transparent transition-[left] duration-300 ease-in-out relative ${
+                className={`font-(family-name:--font-space-mono) pl-1 pt-0 text-left tracking-wide text-xs md:text-sm leading-tight m-0 bg-gradient-to-r from-gray-500 to-gray-700 bg-clip-text text-transparent transition-[left] duration-300 ease-in-out relative ${
                   isHovered ? "left-0" : "-left-full"
                 }`}
               >

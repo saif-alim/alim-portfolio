@@ -43,11 +43,11 @@ export const NavBar = () => {
 
         <div className="flex items-center">
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex gap-12 items-center">
+          <nav className="hidden lg:flex gap-8 items-center">
             {["home", "work", "projects", "contact"].map((section) => (
               <span
                 key={section}
-                className="cursor-pointer tracking-widest transition duration-200 ease-in-out hover:text-[var(--color-accent)] hover:scale-105"
+                className="cursor-pointer tracking-widest transition duration-200 ease-in-out hover:text-[var(--color-accent)]"
                 onClick={() => scrollToSection(section)}
               >
                 {`// ${section}`}
@@ -68,7 +68,7 @@ export const NavBar = () => {
                 {["home", "work", "projects", "contact"].map((section) => (
                   <span
                     key={section}
-                    className="cursor-pointer tracking-widest transition duration-200 ease-in-out hover:text-[var(--color-accent)] hover:scale-105"
+                    className="cursor-pointer tracking-widest transition duration-200 ease-in-out hover:text-[var(--color-accent)]"
                     onClick={() => {
                       scrollToSection(section);
                       setIsNavOpen(false);

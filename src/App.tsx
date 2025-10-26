@@ -1,7 +1,7 @@
 import "./App.css";
 import { NavBar } from "./components/custom/NavBar";
 import { HeroSection } from "./sections/HeroSection";
-import { WorkSection } from "./sections/WorkSection";
+import { WorkSection } from "./sections/work/WorkSection";
 
 function App() {
   return (

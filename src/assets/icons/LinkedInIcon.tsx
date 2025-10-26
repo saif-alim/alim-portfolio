@@ -1,6 +1,6 @@
 import type { FC } from "react";
 
-export const LinkedInIcon: FC = () => {
+export const LinkedInIcon: FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +12,7 @@ export const LinkedInIcon: FC = () => {
       stroke-width="1.5"
       stroke-linecap="round"
       stroke-linejoin="round"
-      className="lucide lucide-linkedin-icon lucide-linkedin"
+      className={`lucide lucide-linkedin-icon lucide-linkedin ${className}`}
     >
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
       <rect width="4" height="12" x="2" y="9" />

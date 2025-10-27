@@ -22,13 +22,13 @@ export const HeroSection = () => {
 
       <div className="pb-5 md:pb-0">
         <h1 className="font-medium text-left tracking-wide text-4xl md:text-6xl leading-none m-0 pb-1">
-          Saif Ul Alim
+          saif ul alim
           <br />
-          Ahmed
+          ahmed
         </h1>
 
         <h2 className="text-left text-gray-400 tracking-widest text-2xl md:text-4xl leading-tight m-0">
-          Software Engineer
+          software engineer
         </h2>
 
         <div className="flex flex-row justify-start gap-8 pt-0 md:pt-2 pointer-events-auto">

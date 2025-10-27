@@ -1,8 +1,9 @@
 export interface Project {
-  shortProjectName: string;
+  shortProjectName?: string;
   projectTitle: string;
   projectDescription: string;
   imageUrl: string;
+  techStack: string[];
 }
 
 export const projects: Project[] = [
@@ -10,21 +11,24 @@ export const projects: Project[] = [
     shortProjectName: "hijra",
     projectTitle: "Hijra: Prayer room locator app",
     projectDescription:
-      "React Native app where users answer “steers” to earn points redeemable for gift cards.",
+      "A community based mobile app to help users find prayer rooms and ratings/details.",
     imageUrl: "/assets/projects/hijra-mockup.webp",
+    techStack: ["flutter", "firebase"],
   },
   {
     shortProjectName: "ocean-odyssey",
     projectTitle: "Ocean Odyssey: Platformer game",
     projectDescription:
-      "Built with Next.js and Tailwind, inspired by developer aesthetics and terminal interfaces.",
+      "A 3D underwater platformer game with ocean based theming and multiple levels.",
     imageUrl: "/assets/projects/oceanody-gameplay-mockup.webp",
+    techStack: ["unity", "c#"],
   },
   {
     shortProjectName: "portfolio-site",
     projectTitle: "Portfolio Website",
     projectDescription:
-      "Static TypeScript site with a lightweight admin panel for managing store locations.",
+      "A personal portfolio website to showcase projects, skills and experience.",
     imageUrl: "/assets/projects/portfolio-site-mockup.webp",
+    techStack: ["react", "ts", "tailwind"],
   },
 ];

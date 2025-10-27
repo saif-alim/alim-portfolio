@@ -13,7 +13,7 @@ export const ProjectCard = ({
         <img
           src={imageUrl}
           alt={projectTitle}
-          className="w-full h-48 object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500"
+          className="w-full h-48 object-cover md:grayscale opacity-80 md:group-hover:opacity-100 md:group-hover:grayscale-0 md:transition-all md:duration-500"
         />
       </div>
       <div className="relative px-3 py-2">

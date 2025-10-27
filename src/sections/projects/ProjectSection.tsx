@@ -1,9 +1,14 @@
 import { Section } from "@/components/custom/Section";
 import { SectionTitle } from "@/components/custom/SectionTitle";
+import { useState } from "react";
 import { ProjectCard } from "./ProjectCard";
+import { ProjectDetailModal } from "./ProjectDetailModal";
 import { projects } from "./projects";
 
 export const ProjectSection = () => {
+  const [selectedProject, setSelectedProject] = useState<
+    null | (typeof projects)[0]
+  >(null);
   return (
     <Section id="projects" className="min-h-[80vh] px-8 py-20">
       <SectionTitle>projects_</SectionTitle>
@@ -13,11 +18,19 @@ export const ProjectSection = () => {
           <ProjectCard
             projectTitle={project.projectTitle}
             projectDescription={project.projectDescription}
-            imageUrl={project.imageUrl}
+            imageUrls={project.imageUrls}
             techStack={project.techStack}
+            onClick={() => setSelectedProject(project)}
           />
         ))}
       </div>
+
+      {selectedProject && (
+        <ProjectDetailModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </Section>
   );
 };

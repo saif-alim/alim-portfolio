@@ -1,17 +1,25 @@
 import type { Project } from "./projects";
 
+interface ProjectCardProps extends Project {
+  onClick?: () => void;
+}
+
 export const ProjectCard = ({
   projectTitle,
   projectDescription,
-  imageUrl,
+  imageUrls,
   techStack,
-}: Project) => {
+  onClick,
+}: ProjectCardProps) => {
   const formattedTechStack = "{" + techStack.join(", ") + "}";
   return (
-    <div className="relative group border border-gray-800 rounded-xl overflow-hidden hover:border-[var(--color-accent)] transition-colors duration-300">
+    <div
+      onClick={onClick}
+      className="relative group border border-gray-800 rounded-xl overflow-hidden hover:border-[var(--color-accent)] transition-colors duration-300"
+    >
       <div>
         <img
-          src={imageUrl}
+          src={imageUrls[0]}
           alt={projectTitle}
           className="w-full h-48 object-cover md:grayscale opacity-80 md:group-hover:opacity-100 md:group-hover:grayscale-0 md:transition-all md:duration-500"
         />

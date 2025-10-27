@@ -59,9 +59,11 @@ const ElsewhereCard = ({ platform, url, username }: ElsewhereCardProps) => (
     href={url}
     target="_blank"
     rel="noreferrer"
-    className="border border-gray-800 hover:border-purple-400 transition-colors rounded-lg p-4 flex flex-col justify-between"
+    className="group border border-gray-800 hover:border-[var(--color-accent)] transition-colors rounded-lg p-4 flex flex-col justify-between"
   >
     <span className="text-white text-sm">{platform}</span>
-    <span className="text-gray-500 text-xs">{username}</span>
+    <span className="text-gray-500 text-xs group-hover:text-[var(--color-accent)] transition-colors">
+      {username}
+    </span>
   </a>
 );

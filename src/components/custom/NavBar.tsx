@@ -68,13 +68,14 @@ export const NavBar = () => {
                 {["home", "work", "projects", "contact"].map((section) => (
                   <span
                     key={section}
-                    className="cursor-pointer tracking-widest transition duration-200 ease-in-out hover:text-[var(--color-accent)]"
+                    className="cursor-pointer tracking-widest transition duration-200 ease-in-out"
                     onClick={() => {
                       scrollToSection(section);
                       setIsNavOpen(false);
                     }}
                   >
-                    {`// ${section}`}
+                    <span className="text-gray-200">// </span>
+                    {section}
                   </span>
                 ))}
               </motion.div>
@@ -83,7 +84,7 @@ export const NavBar = () => {
 
           {/* Mobile */}
           <motion.button
-            className="lg:hidden bg-none border-none cursor-pointer text-xl fixed top-5 right-5 z-30"
+            className={`lg:hidden bg-none border-none cursor-pointer text-xl fixed top-5 right-5 z-30 ${isNavOpen ? "text-[var(--color-accent)]" : ""} transition-colors`}
             animate={{ rotate: isNavOpen ? 0 : 70 }}
             transition={{ type: "spring", stiffness: 60, damping: 10 }}
             onClick={() => setIsNavOpen(!isNavOpen)}

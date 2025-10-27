@@ -17,17 +17,12 @@ export const ProjectCard = ({
         />
       </div>
       <div className="relative px-3 py-2">
-        <div className="absolute top-2 left-2 text-left text-[var(--color-accent)] font-mono text-sm pb-3 tracking-wider">
+        <div className="absolute top-2 left-2 text-left text-[var(--color-accent)] text-sm pb-3 tracking-wider">
           {formattedTechStack}
         </div>
-        <h3 className="font-mono text-lg mb-2 pt-8">{projectTitle}</h3>
-        <p className="text-gray-400 font-mono text-sm pb-4">
-          {projectDescription}
-        </p>
+        <h3 className=" text-lg mb-2 pt-8">{projectTitle}</h3>
+        <p className="text-gray-400  text-sm pb-4">{projectDescription}</p>
       </div>
-      {/* <p className="absolute bottom-3 left-3 font-mono text-sm text-[var(--color-accent)]">
-      {`{flutter, dart}`}
-    </p> */}
     </div>
   );
 };

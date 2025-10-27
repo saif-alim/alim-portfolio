@@ -21,7 +21,7 @@ export const ContactSection = () => {
           // elsewhere
         </h3>
       </div>
-      <div className="w-full flex flex-row gap-8 justify-between">
+      <div className="w-full flex flex-row gap-2 md:gap-8 justify-between">
         <div className="space-y-6">
           <p className="text-gray-400 text-left text-sm leading-relaxed">
             Always open to new opportunities, collaborations, and conversations.

@@ -52,9 +52,21 @@ export const HeroSection = () => {
 
           <div className="flex flex-row gap-[2px] items-center overflow-hidden">
             <div
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              onClick={() => setIsHovered((prev) => !prev)}
+              onMouseEnter={() => {
+                if (window.matchMedia("(hover: hover)").matches) {
+                  setIsHovered(true);
+                }
+              }}
+              onMouseLeave={() => {
+                if (window.matchMedia("(hover: hover)").matches) {
+                  setIsHovered(false);
+                }
+              }}
+              onClick={() => {
+                if (!window.matchMedia("(hover: hover)").matches) {
+                  setIsHovered((prev) => !prev);
+                }
+              }}
               className="transition-transform duration-200 ease-in-out hover:scale-110 group"
             >
               <MapPin

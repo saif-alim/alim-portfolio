@@ -1,7 +1,5 @@
-import { GithubIcon } from "@/assets/icons/GithubIcon";
-import { LinkedInIcon } from "@/assets/icons/LinkedInIcon";
-import { LocationIcon } from "@/assets/icons/LocationIcon";
 import { Section } from "@/components/custom/Section";
+import { Github, Linkedin, MapPin } from "lucide-react";
 import { useState } from "react";
 
 export const HeroSection = () => {
@@ -34,13 +32,21 @@ export const HeroSection = () => {
         <div className="flex flex-row justify-start gap-8 pt-0 md:pt-2 pointer-events-auto">
           <a href="https://www.linkedin.com/in/saif-alim" aria-label="LinkedIn">
             <div className="transition-transform duration-200 ease-in-out hover:scale-110 group pt-1">
-              <LinkedInIcon className="stroke-gray-300 hover:stroke-[var(--color-accent)]" />
+              <Linkedin
+                size={35}
+                strokeWidth={1.2}
+                className="stroke-gray-300 hover:stroke-[var(--color-accent)]"
+              />
             </div>
           </a>
 
           <a href="https://github.com/saif-alim/" aria-label="GitHub">
             <div className="transition-transform duration-200 ease-in-out hover:scale-110 group pt-1">
-              <GithubIcon className="stroke-gray-300 hover:stroke-[var(--color-accent)]" />
+              <Github
+                size={35}
+                strokeWidth={1.2}
+                className="stroke-gray-300 hover:stroke-[var(--color-accent)]"
+              />
             </div>
           </a>
 
@@ -51,7 +57,11 @@ export const HeroSection = () => {
               onClick={() => setIsHovered((prev) => !prev)}
               className="transition-transform duration-200 ease-in-out hover:scale-110 group"
             >
-              <LocationIcon className="stroke-gray-300 hover:stroke-[var(--color-accent)]" />
+              <MapPin
+                size={35}
+                strokeWidth={1.2}
+                className="stroke-gray-300 hover:stroke-[var(--color-accent)]"
+              />
             </div>
             <div className="relative overflow-hidden">
               <p

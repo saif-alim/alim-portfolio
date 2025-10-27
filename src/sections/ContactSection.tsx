@@ -1,7 +1,18 @@
 import { Section } from "@/components/custom/Section";
 import { SectionTitle } from "@/components/custom/SectionTitle";
+import { CheckIcon, CopyIcon } from "lucide-react";
+import { useState } from "react";
 
 export const ContactSection = () => {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("saifalimdev@gmail.com");
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 5000);
+  };
   return (
     <Section id="contact" className="justify-between pb-12">
       <div className="w-full flex flex-row justify-between">
@@ -16,12 +27,24 @@ export const ContactSection = () => {
             Always open to new opportunities, collaborations, and conversations.
           </p>
 
-          <a
-            href="mailto:saifalimdev@gmail.com"
-            className="block text-left text-[var(--color-accent)] hover:underline text-sm"
-          >
-            saifalimdev@gmail.com →
-          </a>
+          <span className="flex flex-row items-center gap-2">
+            {isCopied ? (
+              <CheckIcon size={14} color="var(--color-accent)" />
+            ) : (
+              <CopyIcon
+                size={14}
+                color="var(--color-accent)"
+                onClick={handleCopy}
+                className="cursor-pointer"
+              />
+            )}
+            <a
+              href="mailto:saifalimdev@gmail.com"
+              className="block text-left text-[var(--color-accent)] hover:underline text-sm"
+            >
+              saifalimdev@gmail.com →
+            </a>
+          </span>
         </div>
 
         <div className="flex flex-col md:items-end w-full md:w-1/2">

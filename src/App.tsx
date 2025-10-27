@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <PixelBlast
-        color="#7e4393"
+        color="#86439e"
         patternDensity={1}
         speed={1.5}
         pixelSize={6}

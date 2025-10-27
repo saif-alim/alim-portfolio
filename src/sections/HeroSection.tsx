@@ -8,12 +8,15 @@ export const HeroSection = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Section className="justify-center items-center md:flex-row" id="home">
+    <Section
+      className="relative justify-center items-center md:flex-row pointer-events-none"
+      id="home"
+    >
       <div id="image-container">
         <img
-          src="/assets/alim-the-thinker.png"
+          src="/assets/alim-the-thinker.webp"
           alt="Saif Ul Alim Ahmed"
-          className="w-[80vw] max-w-xs md:w-[40vw] md:max-w-sm pb-5 md:pb-0 m-0"
+          className="w-[80vw] max-w-xs md:w-[40vw] md:max-w-sm pb-5 md:pb-0 m-0 select-none"
         />
       </div>
 
@@ -24,20 +27,20 @@ export const HeroSection = () => {
           Ahmed
         </h1>
 
-        <h2 className="bg-gradient-to-r text-left from-gray-500 to-gray-600 bg-clip-text text-transparent tracking-widest text-2xl md:text-4xl leading-tight m-0">
+        <h2 className="text-left text-gray-400 tracking-widest text-2xl md:text-4xl leading-tight m-0">
           Software Engineer
         </h2>
 
-        <div className="flex flex-row justify-start gap-8 pt-0 md:pt-2">
+        <div className="flex flex-row justify-start gap-8 pt-0 md:pt-2 pointer-events-auto">
           <a href="https://www.linkedin.com/in/saif-alim" aria-label="LinkedIn">
             <div className="transition-transform duration-200 ease-in-out hover:scale-110 group pt-1">
-              <LinkedInIcon className="hover:stroke-[var(--color-accent)]" />
+              <LinkedInIcon className="stroke-gray-300 hover:stroke-[var(--color-accent)]" />
             </div>
           </a>
 
           <a href="https://github.com/saif-alim/" aria-label="GitHub">
             <div className="transition-transform duration-200 ease-in-out hover:scale-110 group pt-1">
-              <GithubIcon className="hover:stroke-[var(--color-accent)]" />
+              <GithubIcon className="stroke-gray-300 hover:stroke-[var(--color-accent)]" />
             </div>
           </a>
 
@@ -47,11 +50,11 @@ export const HeroSection = () => {
               onMouseLeave={() => setIsHovered(false)}
               className="transition-transform duration-200 ease-in-out hover:scale-110 group"
             >
-              <LocationIcon className="hover:stroke-[var(--color-accent)]" />
+              <LocationIcon className="stroke-gray-300 hover:stroke-[var(--color-accent)]" />
             </div>
             <div className="relative overflow-hidden">
               <p
-                className={`pl-1 pt-0 text-left tracking-widest text-xs md:text-sm leading-tight m-0 bg-gradient-to-r from-gray-500 to-gray-700 bg-clip-text text-transparent transition-[left] duration-300 ease-in-out relative ${
+                className={`pl-1 pt-0 text-left tracking-widest text-xs md:text-sm leading-tight m-0 text-[#787878] transition-[left] duration-300 ease-in-out relative ${
                   isHovered ? "left-0" : "-left-full"
                 }`}
               >

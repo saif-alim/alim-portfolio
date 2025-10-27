@@ -1,6 +1,7 @@
 export interface WorkExperience {
   jobTitle: string;
   company: string;
+  shortCompanyName?: string;
   startDate: string;
   endDate: string;
   keyPoints: string[];
@@ -9,7 +10,8 @@ export interface WorkExperience {
 export const workExperiences: WorkExperience[] = [
   {
     jobTitle: "Junior Software Engineer",
-    company: "Vypr",
+    company: "Vypr Validation Ltd",
+    shortCompanyName: "Vypr",
     startDate: "Jul 2024",
     endDate: "Present",
     keyPoints: [
@@ -22,6 +24,7 @@ export const workExperiences: WorkExperience[] = [
   {
     jobTitle: "Head of Design",
     company: "Cub Magazine",
+    shortCompanyName: "Cub Mag",
     startDate: "Oct 2021",
     endDate: "Mar 2022",
     keyPoints: [

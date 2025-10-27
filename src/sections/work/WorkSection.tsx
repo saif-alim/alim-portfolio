@@ -1,4 +1,5 @@
 import { Section } from "@/components/custom/Section";
+import { SectionTitle } from "@/components/custom/SectionTitle";
 import { useState } from "react";
 import { workExperiences } from "./work";
 
@@ -7,12 +8,10 @@ export const WorkSection = () => {
 
   return (
     <Section id="work">
-      <div className="w-2xl mx-auto">
-        <h1 className="font-medium text-left tracking-widest text-3xl md:text-4xl leading-none m-0 pb-5">
-          Selected work
-        </h1>
+      <div className="md:w-2xl mx-auto">
+        <SectionTitle>Selected work</SectionTitle>
         <div className="flex flex-row gap-4 mx-auto">
-          <ul className="text-left text-sm min-w-[150px]">
+          <ul className="text-left text-xs md:text-sm min-w-[80px] md:min-w-[150px] pt-1">
             {workExperiences.map((work, index) => (
               <li
                 key={work.company}
@@ -22,7 +21,7 @@ export const WorkSection = () => {
                 <p
                   className={`${workKey === index ? "text-[var(--color-accent)]" : ""} select-none`}
                 >
-                  // {work.company}
+                  // {work.shortCompanyName ?? work.company}
                 </p>
               </li>
             ))}
@@ -31,13 +30,13 @@ export const WorkSection = () => {
             {workExperiences[workKey] && (
               <>
                 <div className="flex flex-col">
-                  <h2 className="font-semibold text-2xl">
+                  <h2 className="font-semibold text-xl md:text-2xl">
                     {workExperiences[workKey].jobTitle} @{" "}
                     {workExperiences[workKey].company}
                   </h2>
-                  <p className="font-medium text-gray-500">
-                    {workExperiences[workKey].startDate} -{" "}
-                    {workExperiences[workKey].endDate}
+                  <p className="font-light text-sm tracking-wider text-gray-500">
+                    {workExperiences[workKey].startDate.toUpperCase()} -{" "}
+                    {workExperiences[workKey].endDate.toUpperCase()}
                   </p>
                 </div>
                 <ul>

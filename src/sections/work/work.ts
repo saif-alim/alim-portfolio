@@ -12,7 +12,7 @@ export const workExperiences: WorkExperience[] = [
   {
     jobTitle: "Junior Software Engineer",
     company: "Vypr Validation Ltd",
-    shortCompanyName: "Vypr",
+    shortCompanyName: "vypr_",
     startDate: "Jul 2024",
     endDate: "Present",
     keyPoints: [
@@ -26,7 +26,7 @@ export const workExperiences: WorkExperience[] = [
   {
     jobTitle: "Head of Design",
     company: "Cub Magazine",
-    shortCompanyName: "Cub Mag",
+    shortCompanyName: "cub_mag_",
     startDate: "Oct 2021",
     endDate: "Mar 2022",
     keyPoints: [

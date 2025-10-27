@@ -30,10 +30,10 @@ export const NavBar = () => {
 
   return (
     <header
-      className="fixed w-full flex justify-between items-center z-20 backdrop-blur-md px-5 py-5 md:py-5 border-b-1 border-gray-500 transition-colors duration-300"
+      className="fixed w-full flex justify-between items-center z-20 backdrop-blur-md md:px-5 py-5 md:py-5 border-b-1 border-gray-500 transition-colors duration-300"
       style={{ top: `${top}px`, transition: "top 0.5s" }}
     >
-      <div className="w-full max-w-6xl px-[9%] mx-auto flex justify-between items-center">
+      <div className="w-full lg:max-w-6xl px-[9%] mx-auto flex justify-between items-center">
         <div
           className="cursor-pointer pr-2"
           onClick={() => scrollToSection("home")}

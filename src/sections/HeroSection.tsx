@@ -9,7 +9,7 @@ export const HeroSection = () => {
 
   return (
     <Section
-      className="relative justify-center items-center md:flex-row pointer-events-none"
+      className="min-h-screen relative justify-center items-center md:flex-row pointer-events-none"
       id="home"
     >
       <div id="image-container">
@@ -48,13 +48,14 @@ export const HeroSection = () => {
             <div
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
+              onClick={() => setIsHovered((prev) => !prev)}
               className="transition-transform duration-200 ease-in-out hover:scale-110 group"
             >
               <LocationIcon className="stroke-gray-300 hover:stroke-[var(--color-accent)]" />
             </div>
             <div className="relative overflow-hidden">
               <p
-                className={`pl-1 pt-0 text-left tracking-widest text-xs md:text-sm leading-tight m-0 text-[#787878] transition-[left] duration-300 ease-in-out relative ${
+                className={`pl-1 pt-0 text-left tracking-widest text-xs md:text-sm leading-tight m-0 text-gray-400 transition-[left] duration-300 ease-in-out relative ${
                   isHovered ? "left-0" : "-left-full"
                 }`}
               >

@@ -1,7 +1,6 @@
 import "./App.css";
 import { NavBar } from "./components/custom/NavBar";
 import PixelBlast from "./components/PixelBlast";
-import { ContactSection } from "./sections/ContactSection";
 import { HeroSection } from "./sections/HeroSection";
 import { ProjectSection } from "./sections/projects/ProjectSection";
 import { WorkSection } from "./sections/work/WorkSection";
@@ -21,7 +20,6 @@ function App() {
       <HeroSection />
       <WorkSection />
       <ProjectSection />
-      <ContactSection />
     </>
   );
 }

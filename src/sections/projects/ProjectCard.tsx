@@ -15,7 +15,7 @@ export const ProjectCard = ({
       />
     </div>
     <div className="px-3 py-2">
-      <div className="text-left text-[var(--color-accent)] font-mono text-sm pb-3">
+      <div className="text-left text-[var(--color-accent)] font-mono text-sm pb-3 tracking-wider">
         // {shortProjectName}
       </div>
       <h3 className="font-mono text-lg mb-2">{projectTitle}</h3>

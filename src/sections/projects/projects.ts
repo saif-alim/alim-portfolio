@@ -7,24 +7,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    shortProjectName: "steers",
-    projectTitle: "Reward-based Q&A Platform",
+    shortProjectName: "hijra",
+    projectTitle: "Hijra: Prayer room locator app",
     projectDescription:
       "React Native app where users answer “steers” to earn points redeemable for gift cards.",
-    imageUrl: "/assets/placeholder.webp",
+    imageUrl: "/assets/projects/hijra-mockup.webp",
   },
   {
-    shortProjectName: "portfolio",
-    projectTitle: "Personal Portfolio Website",
+    shortProjectName: "ocean-odyssey",
+    projectTitle: "Ocean Odyssey: Platformer game",
     projectDescription:
       "Built with Next.js and Tailwind, inspired by developer aesthetics and terminal interfaces.",
-    imageUrl: "/assets/placeholder.webp",
+    imageUrl: "/assets/projects/oceanody-gameplay-mockup.webp",
   },
   {
-    shortProjectName: "restaurant-site",
-    projectTitle: "Restaurant Website",
+    shortProjectName: "portfolio-site",
+    projectTitle: "Portfolio Website",
     projectDescription:
       "Static TypeScript site with a lightweight admin panel for managing store locations.",
-    imageUrl: "/assets/placeholder.webp",
+    imageUrl: "/assets/projects/portfolio-site-mockup.webp",
   },
 ];

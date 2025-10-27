@@ -8,7 +8,7 @@ export const WorkSection = () => {
 
   return (
     <Section id="work">
-      <div className="md:w-2xl mx-auto">
+      <div className="min-h-140 md:w-2xl mx-auto">
         <SectionTitle>Selected work</SectionTitle>
         <div className="flex flex-row gap-4 mx-auto">
           <ul className="text-left text-xs md:text-sm min-w-[80px] md:min-w-[150px] pt-1">
@@ -34,7 +34,7 @@ export const WorkSection = () => {
                     {workExperiences[workKey].jobTitle} @{" "}
                     {workExperiences[workKey].company}
                   </h2>
-                  <p className="font-light text-sm tracking-wider text-gray-500">
+                  <p className="text-sm tracking-wider text-gray-500">
                     {workExperiences[workKey].startDate.toUpperCase()} -{" "}
                     {workExperiences[workKey].endDate.toUpperCase()}
                   </p>

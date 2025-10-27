@@ -9,7 +9,7 @@ export const LocationIcon: FC<{ className?: string }> = ({ className }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="1.5"
+      stroke-width="1.2"
       stroke-linecap="round"
       stroke-linejoin="round"
       className={`lucide lucide-map-pin-icon lucide-map-pin ${className}`}

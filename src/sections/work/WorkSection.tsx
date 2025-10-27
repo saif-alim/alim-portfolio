@@ -1,10 +1,46 @@
+// WorkSection.tsx
 import { Section } from "@/components/custom/Section";
 import { SectionTitle } from "@/components/custom/SectionTitle";
 import { useState } from "react";
 import { workExperiences } from "./work";
 
+const highlightKeywords = (
+  text: string,
+  keywords: string[],
+  highlightedKeywords: Set<string>,
+) => {
+  if (!keywords.length) return text;
+
+  const pattern = new RegExp(`(${keywords.join("|")})`, "gi");
+  const parts = text.split(pattern);
+
+  return parts.map((part, index) => {
+    const matchedKeyword = keywords.find(
+      (keyword) => keyword.toLowerCase() === part.toLowerCase(),
+    );
+
+    if (
+      matchedKeyword &&
+      !highlightedKeywords.has(matchedKeyword.toLowerCase())
+    ) {
+      highlightedKeywords.add(matchedKeyword.toLowerCase());
+      return (
+        <span
+          key={index}
+          className="underline decoration-[var(--color-accent)] decoration-2 underline-offset-2"
+        >
+          {part}
+        </span>
+      );
+    }
+    return part;
+  });
+};
+
 export const WorkSection = () => {
   const [workKey, setWorkKey] = useState<number>(0);
+  const currentWork = workExperiences[workKey];
+  const keywords = currentWork?.keyWords ?? [];
 
   return (
     <Section id="work" className="min-h-[70vh]">
@@ -14,7 +50,7 @@ export const WorkSection = () => {
           {workExperiences.map((work, index) => (
             <li
               key={work.company}
-              className="pb-4"
+              className="pb-4 cursor-pointer"
               onClick={() => setWorkKey(index)}
             >
               <p
@@ -26,28 +62,36 @@ export const WorkSection = () => {
           ))}
         </ul>
         <div className="flex flex-col gap-2 text-left">
-          {workExperiences[workKey] && (
+          {currentWork && (
             <>
               <div className="flex flex-col">
                 <h2 className="font-semibold text-xl md:text-2xl">
-                  {workExperiences[workKey].jobTitle} @{" "}
-                  {workExperiences[workKey].company}
+                  {currentWork.jobTitle} @ {currentWork.company}
                 </h2>
                 <p className="text-sm tracking-wider text-gray-500">
-                  {workExperiences[workKey].startDate.toUpperCase()} -{" "}
-                  {workExperiences[workKey].endDate.toUpperCase()}
+                  {currentWork.startDate.toUpperCase()} -{" "}
+                  {currentWork.endDate.toUpperCase()}
                 </p>
               </div>
               <ul>
-                {workExperiences[workKey].keyPoints.map((point) => (
-                  <li
-                    key={point}
-                    className="flex flex-row gap-2 font-light text-sm tracking-wide pb-3"
-                  >
-                    <p className="text-[var(--color-accent)]">•</p>
-                    {point}
-                  </li>
-                ))}
+                {(() => {
+                  const highlightedKeywords = new Set<string>();
+                  return currentWork.keyPoints.map((point) => (
+                    <li
+                      key={point}
+                      className="flex flex-row gap-2 font-light text-sm tracking-wide pb-3"
+                    >
+                      <p className="text-[var(--color-accent)]">•</p>
+                      <span>
+                        {highlightKeywords(
+                          point,
+                          keywords,
+                          highlightedKeywords,
+                        )}
+                      </span>
+                    </li>
+                  ));
+                })()}
               </ul>
             </>
           )}

@@ -5,6 +5,7 @@ export interface WorkExperience {
   startDate: string;
   endDate: string;
   keyPoints: string[];
+  keyWords?: string[];
 }
 
 export const workExperiences: WorkExperience[] = [
@@ -20,6 +21,7 @@ export const workExperiences: WorkExperience[] = [
       "Worked with AWS services including DynamoDB optimisations and S3 file handling.",
       "Collaborated in an Agile environment to deliver high-quality results.",
     ],
+    keyWords: ["typescript", "node.js", "aws", "dynamodb", "s3", "agile"],
   },
   {
     jobTitle: "Head of Design",

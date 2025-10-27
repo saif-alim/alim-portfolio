@@ -40,7 +40,7 @@ export const ContactSection = () => {
             )}
             <a
               href="mailto:saifalimdev@gmail.com"
-              className="block text-left text-[var(--color-accent)] hover:underline text-sm"
+              className="block text-left text-[var(--color-accent)] hover:underline text-xs md:text-sm"
             >
               saifalimdev@gmail.com →
             </a>

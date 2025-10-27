@@ -12,7 +12,7 @@ export const Section: React.FC<SectionProps> = ({
 }) => {
   return (
     <section
-      className={`flex flex-col w-full max-w-5xl max-h-[1200px] mx-auto box-border px-[5%] overflow-x-hidden pt-[110px] gap-2xl ${className}`}
+      className={`flex flex-col w-full max-w-5xl mx-auto box-border px-[5%] overflow-x-hidden pt-[110px] gap-2xl ${className}`}
       {...rest}
     >
       {children}

@@ -22,8 +22,8 @@ export const ContactSection = () => {
         </h3>
       </div>
       <div className="w-full flex flex-row gap-2 md:gap-8 justify-between">
-        <div className="space-y-6">
-          <p className="text-gray-400 text-left text-sm leading-relaxed">
+        <div className="space-y-8 md:space-y-6">
+          <p className="text-gray-400 text-left text-sm leading-relaxed tracking-wider">
             Always open to new opportunities, collaborations, and conversations.
           </p>
 

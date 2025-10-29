@@ -28,7 +28,11 @@ export const projects: Project[] = [
     projectTitle: "Ocean Odyssey: Platformer game",
     projectDescription:
       "A 3D underwater platformer game with ocean based theming and multiple levels.",
-    imageUrls: ["/assets/projects/oceanody-gameplay-mockup.webp"],
+    imageUrls: [
+      "/assets/projects/oceanody-gameplay-mockup.webp",
+      "/assets/projects/oceanody-start-menu.webp",
+      "/assets/projects/oceanody-settings.webp",
+    ],
     techStack: ["unity", "c#"],
     projectUrl: "https://aamirc22.github.io/OceanOdy/build/index.html",
     detailedDescription:

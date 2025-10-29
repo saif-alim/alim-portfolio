@@ -54,7 +54,7 @@ export const WorkSection = () => {
               onClick={() => setWorkKey(index)}
             >
               <p
-                className={`${workKey === index ? "text-[var(--color-accent)]" : ""} select-none`}
+                className={`hover:text-[var(--color-accent)] transition-colors ${workKey === index ? "text-[var(--color-accent)]" : ""} select-none`}
               >
                 // {work.shortCompanyName ?? work.company}
               </p>

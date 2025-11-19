@@ -10,7 +10,7 @@ export interface WorkExperience {
 
 export const workExperiences: WorkExperience[] = [
   {
-    jobTitle: "Junior Software Engineer",
+    jobTitle: "Software Engineer",
     company: "Vypr Validation Ltd",
     shortCompanyName: "vypr_",
     startDate: "Jul 2024",

@@ -8,7 +8,17 @@ export interface Project {
   projectUrl?: string;
 }
 
-export const projects: Project[] = [
+export const projects: Project[] = [  
+  {
+    shortProjectName: "repem_",
+    projectTitle: "REPEM: Social fitness tracker",
+    projectDescription:
+      "A social fitness tracking app that helps users log workouts, stay consistent, and motivate friends.",
+    detailedDescription:
+      "REPEM is a social fitness tracking app designed to help users build consistency and accountability in their workouts. Users can log exercises, track progress over time, and share activity updates with friends. The app focuses on simplicity and motivation, combining personal fitness tracking with light social features to encourage regular training and healthy habits. Built with Flutter, REPEM provides a clean, cross-platform experience with an emphasis on performance and intuitive UI.",
+    imageUrls: ["/assets/projects/repem-mockup.webp"],
+    techStack: ["flutter", "dart"],
+  },
   {
     shortProjectName: "hijra_",
     projectTitle: "Hijra: Prayer room locator app",
@@ -38,14 +48,5 @@ export const projects: Project[] = [
     detailedDescription:
       "Ocean Odyssey is a 3D platformer game developed in Unity where players navigate an underwater world filled with obstacles. The game features multiple levels, each with unique challenges and ocean-themed environments. Players control a character that can swim, jump, and interact with various objects to progress through the game. There is also a time based oxygen mechanic that adds an extra layer of challenge.",
   },
-  {
-    shortProjectName: "portfolio_site_",
-    projectTitle: "Portfolio Website",
-    projectDescription:
-      "A personal portfolio website to showcase projects, skills and experience.",
-    detailedDescription:
-      "This portfolio website was built using React, TypeScript, and Tailwind CSS. It features a clean and modern design, with sections for showcasing projects, skills, and experience. The website is fully responsive and optimized for performance.",
-    imageUrls: ["/assets/projects/portfolio-site-mockup.webp"],
-    techStack: ["react", "ts", "tailwind"],
-  },
+
 ];

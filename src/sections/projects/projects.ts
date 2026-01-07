@@ -17,6 +17,7 @@ export const projects: Project[] = [
     detailedDescription:
       "REPEM is a social fitness tracking app designed to help users build consistency and accountability in their workouts. Users can log exercises, track progress over time, and share activity updates with friends. The app focuses on simplicity and motivation, combining personal fitness tracking with light social features to encourage regular training and healthy habits. Built with Flutter, REPEM provides a clean, cross-platform experience with an emphasis on performance and intuitive UI.",
     imageUrls: ["/assets/projects/repem-mockup.webp"],
+    projectUrl: "https://repemfitness.com/",
     techStack: ["flutter", "dart"],
   },
   {

@@ -4,24 +4,7 @@ import { scrollToSection } from "../../lib/scrollToSection";
 import { Logo } from "./Logo";
 
 export const NavBar = () => {
-  const [top, setTop] = useState(0);
   const [isNavOpen, setIsNavOpen] = useState(false);
-
-  useEffect(() => {
-    let lastScrollY = window.pageYOffset;
-
-    const handleScroll = () => {
-      if (isNavOpen) return;
-      const currentScrollY = window.pageYOffset;
-      if (Math.abs(currentScrollY - lastScrollY) > 50) {
-        setTop(lastScrollY < currentScrollY ? -155 : -2);
-        lastScrollY = currentScrollY;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isNavOpen]);
 
   useEffect(() => {
     const overlay = document.getElementById("screen-overlay");
@@ -31,7 +14,6 @@ export const NavBar = () => {
   return (
     <header
       className="fixed w-full flex justify-between items-center z-20 backdrop-blur-md md:px-5 py-5 md:py-5 border-b-1 border-gray-500 transition-colors duration-300"
-      style={{ top: `${top}px`, transition: "top 0.5s" }}
     >
       <div className="w-full lg:max-w-6xl px-[9%] mx-auto flex justify-between items-center">
         <div

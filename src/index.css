@@ -1,12 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Quicksand:wght@600;700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-mono: "JetBrains Mono", monospace;
+  --font-wordmark: "Quicksand", sans-serif;
+
+  --color-accent-2: #a855f7;
+  --color-accent-soft: #c4a6ff;
+  --color-media: #13111c;
+
+  /* 1120px of content plus a 28px gutter on each side */
+  --container-content: 1176px;
+
+  --animate-blink: blink 1s steps(1) infinite;
+
+  @keyframes blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
 @theme inline {
-  --font-lexend-deca: "Lexend Deca", sans-serif;
-  --font-source-code-pro: "Source Code Pro", monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -80,9 +103,9 @@
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
+  --background: #09090d;
+  --foreground: #d9d7e3;
+  --card: #0d0c13;
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.21 0.006 285.885);
   --popover-foreground: oklch(0.985 0 0);
@@ -92,10 +115,10 @@
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.274 0.006 286.033);
   --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(62.7% 0.265 303.9);
+  --accent: #7c3aed;
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
+  --border: #221e31;
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.552 0.016 285.938);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -118,6 +141,19 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-source-code-pro;
+    @apply bg-background text-foreground font-mono antialiased;
+    /* JetBrains Mono's natural line height, pinned so the fallback font doesn't shift the layout. */
+    line-height: 1.32;
+    overflow-x: clip;
+  }
+  a {
+    color: #b48cff;
+  }
+  a:hover {
+    color: #d6c2ff;
+  }
+  ::selection {
+    background: #7c3aed;
+    color: #fff;
   }
 }

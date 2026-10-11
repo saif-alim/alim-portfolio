@@ -1,101 +1,40 @@
 // WorkSection.tsx
+import { Reveal } from "@/components/custom/Reveal";
 import { Section } from "@/components/custom/Section";
 import { SectionTitle } from "@/components/custom/SectionTitle";
-import { useState } from "react";
+import { Timeline } from "@/components/custom/Timeline";
 import { workExperiences } from "./work";
 
-const highlightKeywords = (
-  text: string,
-  keywords: string[],
-  highlightedKeywords: Set<string>,
-) => {
-  if (!keywords.length) return text;
-
-  const pattern = new RegExp(`(${keywords.join("|")})`, "gi");
-  const parts = text.split(pattern);
-
-  return parts.map((part, index) => {
-    const matchedKeyword = keywords.find(
-      (keyword) => keyword.toLowerCase() === part.toLowerCase(),
-    );
-
-    if (
-      matchedKeyword &&
-      !highlightedKeywords.has(matchedKeyword.toLowerCase())
-    ) {
-      highlightedKeywords.add(matchedKeyword.toLowerCase());
-      return (
-        <span
-          key={index}
-          className="underline decoration-[var(--color-accent)] decoration-2 underline-offset-2"
-        >
-          {part}
-        </span>
-      );
-    }
-    return part;
-  });
-};
-
 export const WorkSection = () => {
-  const [workKey, setWorkKey] = useState<number>(0);
-  const currentWork = workExperiences[workKey];
-  const keywords = currentWork?.keyWords ?? [];
-
   return (
-    <Section id="work" className="min-h-[70vh]">
-      <SectionTitle>selected_work_</SectionTitle>
-      <div className="flex flex-row gap-4 mx-auto">
-        <ul className="text-left text-xs md:text-sm min-w-[80px] md:min-w-[150px] pt-1">
-          {workExperiences.map((work, index) => (
-            <li
-              key={work.company}
-              className="pb-4 cursor-pointer"
-              onClick={() => setWorkKey(index)}
-            >
-              <p
-                className={`hover:text-[var(--color-accent)] transition-colors ${workKey === index ? "text-[var(--color-accent)]" : ""} select-none`}
-              >
-                // {work.shortCompanyName ?? work.company}
+    <Section id="experience">
+      <SectionTitle>experience</SectionTitle>
+      <div className="flex flex-col gap-16">
+        {workExperiences.map((work) => (
+          <div
+            key={work.company}
+            className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-12"
+          >
+            <Reveal className="flex flex-col gap-3.5 max-w-[300px]">
+              <p className="text-[12px] tracking-[1.5px] text-accent-2 uppercase">
+                {work.startDate} — {work.endDate}
               </p>
-            </li>
-          ))}
-        </ul>
-        <div className="flex flex-col gap-2 text-left">
-          {currentWork && (
-            <>
-              <div className="flex flex-col">
-                <h2 className="font-semibold text-xl md:text-2xl">
-                  {currentWork.jobTitle} @ {currentWork.company}
-                </h2>
-                <p className="text-sm tracking-wider text-gray-500">
-                  {currentWork.startDate.toUpperCase()} -{" "}
-                  {currentWork.endDate.toUpperCase()}
-                </p>
-              </div>
-              <ul>
-                {(() => {
-                  const highlightedKeywords = new Set<string>();
-                  return currentWork.keyPoints.map((point) => (
-                    <li
-                      key={point}
-                      className="flex flex-row gap-2 font-light text-sm tracking-wide pb-3"
-                    >
-                      <p className="text-[var(--color-accent)]">•</p>
-                      <span>
-                        {highlightKeywords(
-                          point,
-                          keywords,
-                          highlightedKeywords,
-                        )}
-                      </span>
-                    </li>
-                  ));
-                })()}
-              </ul>
-            </>
-          )}
-        </div>
+              <h3 className="font-medium text-[22px] leading-[1.3] text-white">
+                {work.jobTitle}
+              </h3>
+              <p className="text-[14px] text-[#b3afc2]">
+                @ {work.company}
+                <br />
+                <span className="text-[#7d7891]">{work.location}</span>
+              </p>
+            </Reveal>
+            {/* Spanning 2 columns adds a column (and its gap) once they stack, too wide for small phones */}
+            <Timeline
+              items={work.keyPoints}
+              className="col-span-2 max-[400px]:col-span-1"
+            />
+          </div>
+        ))}
       </div>
     </Section>
   );

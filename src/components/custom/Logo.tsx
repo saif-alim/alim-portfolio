@@ -1,12 +1,8 @@
 export const Logo = () => {
   return (
-    <div className="inline-block relative self-start transition-transform duration-200 ease-in-out hover:scale-105">
-      <div className="absolute bottom-0 w-full h-[35%] bg-purple-600 z-0 transition-transform duration-200 ease-in-out hover:scale-105" />
-      <div className="text-center transition-transform duration-200 ease-in-out hover:scale-101">
-        <h1 className="font-[Lexend_Deca] font-semibold tracking-widest text-2xl md:text-3xl m-0 relative z-1 inline-block">
-          saifalim_
-        </h1>
-      </div>
-    </div>
+    <span className="relative isolate inline-block pb-1 font-wordmark font-bold text-[26px] leading-none tracking-[0.5px] text-white transition-transform duration-200 ease-in-out hover:scale-105">
+      saifalim_
+      <span className="absolute -inset-x-0.5 bottom-0.5 -z-1 h-[9px] bg-accent" />
+    </span>
   );
 };

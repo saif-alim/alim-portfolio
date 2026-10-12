@@ -16,7 +16,8 @@ export const ProjectCard = ({
       to={`/projects/${id}`}
       className="flex flex-col h-full border rounded-[14px] overflow-hidden bg-card text-inherit [transition:translate_.35s_cubic-bezier(.2,.8,.2,1),border-color_.35s,box-shadow_.35s] hover:-translate-y-1.5 hover:border-accent hover:text-inherit hover:shadow-[0_24px_60px_-24px_rgba(124,58,237,0.55)]"
     >
-      <div className="aspect-[16/10] bg-media">
+      {/* min-h-0 stops the loaded image's own ratio from stretching the box */}
+      <div className="aspect-[16/10] min-h-0 bg-media">
         {imageUrls.length > 0 ? (
           <img
             src={imageUrls[0]}

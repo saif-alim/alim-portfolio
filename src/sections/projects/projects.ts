@@ -78,7 +78,7 @@ export const projects: Project[] = [
       "Used Firebase Firestore to store prayer room locations and Firebase Authentication to handle user sign-in securely.",
     ],
     imageUrls: [
-      "/assets/projects/hijra-cover.jpg",
+      "/assets/projects/hijra-cover.webp",
       "/assets/projects/hijra-mockup.webp",
       "/assets/projects/hijra-screenshots-mockup.webp",
     ],

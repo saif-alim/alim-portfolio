@@ -5,22 +5,25 @@ import { EMAIL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/links";
 import { useEffect, useRef, useState } from "react";
 
 export const ContactSection = () => {
-  const [isCopied, setIsCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "failed">(
+    "idle",
+  );
   const resetTimeout = useRef<number>(undefined);
 
   useEffect(() => () => window.clearTimeout(resetTimeout.current), []);
 
   const handleCopy = async () => {
+    let status: typeof copyStatus = "copied";
     try {
       await navigator.clipboard.writeText(EMAIL);
     } catch {
       // Clipboard access unavailable or denied, so don't claim it was copied
-      return;
+      status = "failed";
     }
-    setIsCopied(true);
+    setCopyStatus(status);
     window.clearTimeout(resetTimeout.current);
     resetTimeout.current = window.setTimeout(() => {
-      setIsCopied(false);
+      setCopyStatus("idle");
     }, 1600);
   };
 
@@ -33,18 +36,21 @@ export const ContactSection = () => {
             Always open to new opportunities, collaborations, and conversations.
           </p>
 
-          <button
-            onClick={handleCopy}
-            className="flex flex-wrap items-center gap-3.5 cursor-pointer text-left text-[clamp(18px,2.6vw,26px)] text-white transition-colors duration-200 hover:text-accent-soft"
-          >
-            {EMAIL}
-            <span
-              aria-live="polite"
-              className="border border-[#3a3550] rounded-[6px] px-2.5 py-1 text-[12px] text-accent-2"
+          <div className="flex flex-wrap items-center gap-3.5">
+            <a
+              href={`mailto:${EMAIL}`}
+              className="text-[clamp(18px,2.6vw,26px)] text-white transition-colors duration-200 hover:text-accent-soft"
             >
-              {isCopied ? "copied ✓" : "copy"}
-            </span>
-          </button>
+              {EMAIL}
+            </a>
+            <button
+              onClick={handleCopy}
+              aria-label="Copy email address"
+              className="border border-[#3a3550] rounded-[6px] px-2.5 py-1 cursor-pointer text-[12px] text-accent-2 transition-colors duration-200 hover:border-accent-2 hover:text-white"
+            >
+              <span aria-live="polite">{copyLabels[copyStatus]}</span>
+            </button>
+          </div>
         </Reveal>
 
         <Reveal index={1} className="grid grid-cols-3 gap-3">
@@ -67,6 +73,12 @@ export const ContactSection = () => {
       </div>
     </Section>
   );
+};
+
+const copyLabels = {
+  idle: "copy",
+  copied: "copied ✓",
+  failed: "couldn't copy",
 };
 
 interface ElsewhereCardProps {

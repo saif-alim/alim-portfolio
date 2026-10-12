@@ -1,10 +1,20 @@
+import { cn } from "@/lib/utils";
 import type React from "react";
 import type { ReactNode } from "react";
+import { Reveal } from "./Reveal";
 
-export const SectionTitle: React.FC<{ children: ReactNode }> = ({
-  children,
-}) => (
-  <h2 className="font-medium text-left tracking-widest text-3xl md:text-4xl leading-none m-0 pb-10">
+export const SectionTitle: React.FC<{
+  children: ReactNode;
+  className?: string;
+}> = ({ children, className }) => (
+  <Reveal
+    as="h2"
+    className={cn(
+      "font-medium tracking-[3px] text-[clamp(28px,4vw,40px)] text-white m-0 mb-14",
+      className,
+    )}
+  >
     {children}
-  </h2>
+    <span className="text-accent-2">_</span>
+  </Reveal>
 );

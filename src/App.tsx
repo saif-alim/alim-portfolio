@@ -1,30 +1,23 @@
-import "./App.css";
+import { MotionConfig } from "framer-motion";
+import { Navigate, Route, Routes } from "react-router";
 import { Footer } from "./components/custom/Footer";
 import { NavBar } from "./components/custom/NavBar";
-import PixelBlast from "./components/PixelBlast";
-import { ContactSection } from "./sections/ContactSection";
-import { HeroSection } from "./sections/HeroSection";
-import { ProjectSection } from "./sections/projects/ProjectSection";
-import { WorkSection } from "./sections/work/WorkSection";
+import { ScrollManager } from "./components/custom/ScrollManager";
+import { HomePage } from "./pages/HomePage";
+import { ProjectPage } from "./pages/ProjectPage";
 
 function App() {
   return (
-    <>
-      <PixelBlast
-        color="#86439e"
-        patternDensity={1}
-        speed={1.5}
-        pixelSize={6}
-        variant="diamond"
-        patternScale={1}
-      />
+    <MotionConfig reducedMotion="user">
+      <ScrollManager />
       <NavBar />
-      <HeroSection />
-      <WorkSection />
-      <ProjectSection />
-      <ContactSection />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects/:id" element={<ProjectPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
       <Footer />
-    </>
+    </MotionConfig>
   );
 }
 

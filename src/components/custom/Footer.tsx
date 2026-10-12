@@ -1,12 +1,8 @@
 export const Footer = () => (
-  <div className="max-w-5xl mx-auto px-[5%]">
-    <hr />
-    <footer className="flex flex-col w-full py-6 text-center text-sm text-gray-500">
-      &copy; {new Date().getFullYear()} Saif Ul Alim Ahmed — All rights
-      reserved.
-      <span className="text-xs font-light py-1">
-        Built with React, TypeScript &amp; Tailwind CSS.
-      </span>
+  <div className="max-w-content mx-auto px-7 pb-[60px]">
+    <footer className="flex flex-wrap justify-between gap-4 mt-[100px] pt-7 border-t border-[#1c1929] text-[11px] text-[#5d5872]">
+      <span>&copy; {new Date().getFullYear()} Saif Ul Alim Ahmed</span>
+      <span>BSc Computer Science, Queen Mary University of London</span>
     </footer>
   </div>
 );

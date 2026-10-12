@@ -1,38 +1,26 @@
 export interface WorkExperience {
   jobTitle: string;
   company: string;
-  shortCompanyName?: string;
+  location: string;
   startDate: string;
   endDate: string;
   keyPoints: string[];
-  keyWords?: string[];
 }
 
 export const workExperiences: WorkExperience[] = [
   {
-    jobTitle: "Software Engineer",
+    jobTitle: "Software Developer",
     company: "Vypr Validation Ltd",
-    shortCompanyName: "vypr_",
+    location: "Manchester, United Kingdom",
     startDate: "Jul 2024",
     endDate: "Present",
     keyPoints: [
-      "Contributed to the development of a TypeScript based web application.",
-      "Developed and maintained server-side logic using Node.js and Typescript, ensuring scalable and efficient API endpoints.",
-      "Worked with AWS services including DynamoDB optimisations and S3 file handling.",
-      "Collaborated in an Agile environment to deliver high-quality results.",
-    ],
-    keyWords: ["typescript", "node.js", "aws", "dynamodb", "s3", "agile"],
-  },
-  {
-    jobTitle: "Head of Design",
-    company: "Cub Magazine",
-    shortCompanyName: "cub_mag_",
-    startDate: "Oct 2021",
-    endDate: "Mar 2022",
-    keyPoints: [
-      "Spearheaded design process and guided team to align with required specifications, resulting in a cohesive final design.",
-      "Managed and inspired team, pushing quality of design work and helping drive impact through teams.",
-      "Engaged with the team to brainstorm and create a visually striking end result.",
+      "Own features end-to-end, from reviewing product pitches, producing estimates and scoping requirements with product and design, to building, testing and releasing them. Shipped 8 features to production so far.",
+      "Design and build the Node.js and TypeScript APIs behind each feature, including DynamoDB data modelling and S3 file handling.",
+      "Build responsive, accessible user interfaces with React, TypeScript and Mantine, including reusable components and custom hooks with 85% test coverage using React Testing Library. Design application architecture (folder structure, separation of concerns) to keep the codebase maintainable as it grows.",
+      "Develop and maintain the native Android app using Kotlin, Java, XML and Jetpack Compose, including REST API integration, local data storage and caching.",
+      "Write unit tests with JUnit and Mockito and manage releases through Google Play Console, including versioning, signing and rollout strategy.",
+      "Help maintain the iOS app alongside core Android and web development.",
     ],
   },
 ];

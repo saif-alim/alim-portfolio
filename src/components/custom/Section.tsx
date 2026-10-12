@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
@@ -12,7 +13,10 @@ export const Section: React.FC<SectionProps> = ({
 }) => {
   return (
     <section
-      className={`flex flex-col w-full max-w-5xl mx-auto box-border px-[5%] overflow-x-hidden pt-[110px] gap-2xl scroll-mt-10 ${className}`}
+      className={cn(
+        "w-full max-w-content mx-auto px-7 pt-[120px] pb-10",
+        className,
+      )}
       {...rest}
     >
       {children}

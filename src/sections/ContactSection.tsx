@@ -92,9 +92,11 @@ const ElsewhereCard = ({ platform, url, username }: ElsewhereCardProps) => (
     href={url}
     target="_blank"
     rel="noreferrer"
-    className="border rounded-[10px] p-4 text-center text-[13px] text-white transition-[translate,border-color] duration-200 hover:-translate-y-[3px] hover:border-accent"
+    className="border rounded-[10px] px-1.5 py-4 sm:px-4 text-center text-[13px] text-white transition-[translate,border-color] duration-200 hover:-translate-y-[3px] hover:border-accent"
   >
     {platform}
-    <div className="mt-1 text-[11px] text-[#6f6a84]">{username}</div>
+    <div className="mt-1 text-[11px] whitespace-nowrap text-[#6f6a84]">
+      {username}
+    </div>
   </a>
 );

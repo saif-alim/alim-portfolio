@@ -18,7 +18,7 @@ export const SkillsSection = () => {
         {skillGroups.map((group) => (
           <div
             key={group.key}
-            className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1.5 my-1.5 pl-7"
+            className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1.5 my-1.5 pl-7 sm:grid sm:grid-cols-[200px_1fr]"
           >
             <span className="min-w-[200px] text-accent-soft">{group.key}:</span>
             <span className="flex flex-wrap gap-2">

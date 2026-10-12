@@ -40,7 +40,7 @@ const ProjectDetail = ({ project, nextProject }: ProjectDetailProps) => {
 
   useEffect(() => {
     const siteTitle = document.title;
-    document.title = `${project.projectTitle} | ${siteTitle}`;
+    document.title = `${project.projectTitle} | saifalim_`;
     return () => {
       document.title = siteTitle;
     };

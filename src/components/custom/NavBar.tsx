@@ -1,7 +1,7 @@
 import { CV_URL } from "@/lib/links";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router";
 import { Logo } from "./Logo";
 
@@ -9,8 +9,42 @@ const sections = ["experience", "projects", "skills", "contact"];
 
 export const NavBar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
   const { pathname } = useLocation();
   const activeSection = pathname.startsWith("/projects") ? "projects" : null;
+
+  // While the mobile menu is open: lock page scroll, and close it on a tap
+  // outside, on Escape, or once the viewport grows into the desktop nav.
+  useEffect(() => {
+    if (!isNavOpen) return;
+    const close = () => setIsNavOpen(false);
+    const onPointerDown = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (navRef.current?.contains(target)) return;
+      if (toggleRef.current?.contains(target)) return;
+      close();
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      close();
+      toggleRef.current?.focus();
+    };
+    const desktop = window.matchMedia("(min-width: 768px)");
+
+    const root = document.documentElement;
+    const previousOverflow = root.style.overflow;
+    root.style.overflow = "hidden";
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    desktop.addEventListener("change", close);
+    return () => {
+      root.style.overflow = previousOverflow;
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+      desktop.removeEventListener("change", close);
+    };
+  }, [isNavOpen]);
 
   return (
     <header className="sticky top-0 z-20 border-b border-[rgba(139,92,246,0.18)] bg-[rgba(9,9,13,0.72)] backdrop-blur-md overflow-x-clip">
@@ -46,6 +80,7 @@ export const NavBar = () => {
         <AnimatePresence>
           {isNavOpen && (
             <motion.nav
+              ref={navRef}
               className="md:hidden fixed top-0 right-0 w-52 h-[120vh] bg-background shadow-lg flex flex-col items-start gap-4 pt-20 px-7 z-20 border-l text-[14px]"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -79,6 +114,7 @@ export const NavBar = () => {
 
         {/* Mobile */}
         <motion.button
+          ref={toggleRef}
           className={`md:hidden bg-none border-none cursor-pointer text-xl z-30 ${isNavOpen ? "text-accent-2" : "text-white"} transition-colors`}
           aria-label={isNavOpen ? "Close menu" : "Open menu"}
           aria-expanded={isNavOpen}

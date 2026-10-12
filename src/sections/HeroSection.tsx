@@ -69,8 +69,8 @@ export const HeroSection = () => {
       <DotField className="[mask-image:radial-gradient(ellipse_at_60%_50%,#000_30%,transparent_78%)]" />
 
       {/* pointer-events-none lets mouse moves through to the dot field */}
-      <div className="relative grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] items-center gap-14 w-full max-w-content mx-auto px-7 py-20 pointer-events-none">
-        <Reveal className="relative justify-self-center w-[min(100%,300px)] aspect-square pointer-events-auto">
+      <div className="relative grid grid-cols-[repeat(auto-fit,minmax(min(100%,280px),1fr))] items-center gap-14 w-full max-w-content mx-auto px-7 py-10 sm:py-20 pointer-events-none">
+        <Reveal className="relative justify-self-center w-[180px] sm:w-[min(100%,300px)] aspect-square pointer-events-auto">
           <div className="absolute -inset-3.5 rounded-full border border-dashed border-[rgba(168,85,247,0.45)]" />
           <img
             src="/assets/alim-the-thinker.webp"
